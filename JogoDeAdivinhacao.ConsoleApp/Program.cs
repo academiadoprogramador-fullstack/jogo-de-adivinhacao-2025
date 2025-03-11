@@ -12,10 +12,16 @@ namespace JogoDeAdivinhacao.ConsoleApp
                 Console.WriteLine("Jogo de Adivinhação");
                 Console.WriteLine("----------------------------------------");
 
-                Console.Write("Digite um número: ");
+                Random geradorDeNumeros = new Random();
+                int numeroSecreto = geradorDeNumeros.Next(1, 21);
+
+                Console.Write("Digite um número entre 1 e 20: ");
                 int numeroDigitado = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine($"\nVocê digitou: {numeroDigitado}");
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine($"Você digitou: {numeroDigitado}");
+                Console.WriteLine($"O número secreto era: {numeroSecreto}");
+                Console.WriteLine("----------------------------------------");
 
                 Console.Write("Deseja continuar? (S/N): ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
